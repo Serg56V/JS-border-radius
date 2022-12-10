@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<title>input + border-radius</title>
+<style>
+	body { font-family: sans-serif; }
+	div {
+		background: #e4efc7;
+		border: 1px solid #333;
+		padding: 15px;
+		border-radius: 0px;
+		margin-bottom: 10px;
+		width: 600px;
+	}
+	input[type="text"]{
+		width: 20px;
+		padding-left: 6px;
+	}
+</style>
+<script>
+	function fun1() {
+		let radius1 = document.querySelector('#radius-1'); //radius - это Input
+		let p = document.querySelector('#one'); // p - абзац
+		let div = document.querySelector('#two');
+		//p.innerHTML = radius.value;
+		i1.value = radius1.value;
+		//div.style.border = radius.value + 'px solid #ccc';
+		//div.style.color = '#'+radius.value+'9999';
+		//div.style.marginBottom = radius.value + 'px'; 
+		div.style.borderTopLeftRadius = radius1.value + 'px'; 
+	}
+	function fun2() {
+		let radius2 = document.querySelector('#radius-2');
+		let div = document.querySelector('#two');
+		i2.value = radius2.value;
+		div.style.borderTopRightRadius = radius2.value + 'px'; 
+	}
+	function fun3() {
+		let radius3 = document.querySelector('#radius-3');
+		let div = document.querySelector('#two');
+		i3.value = radius3.value;
+		div.style.borderBottomRightRadius = radius3.value + 'px'; 
+	}
+	function fun4() {
+		let radius4 = document.querySelector('#radius-4');
+		let div = document.querySelector('#two');
+		i4.value = radius4.value;
+		div.style.borderBottomLeftRadius = radius4.value + 'px'; 
+	}
+</script>
+</head>
+<body>
+  <section>
+	<h1>border-radius</h1>
+	<div id="two">
+		В школе DreamIT на курсе Web-разработка мы изучаем язык гипертекстовой разметки HTML, таблицы каскадных стилей CSS, с помощью которых верстаем сайты. Скоро приступим к изучению языка программирования JavaSrcipt, для придания жизни сайту.
+	</div>
+	<input type="range" id="radius-1" min="0" max="50" step="1" value="0" oninput="fun1()">
+	<label for="radius"> border-top-left-radius: </label>
+<!--	<p id="one">0</p>  -->
+	<input type="text" id="i1">
+  </section>
+  
+  <section>
+	<input type="range" id="radius-2" min="0" max="50" step="1" value="0" oninput="fun2()">
+	<label for="radius"> border-top-right-radius: </label>
+	<input type="text" id="i2">
+  </section>	
+  
+  <section>
+	<input type="range" id="radius-3" min="0" max="50" step="1" value="0" oninput="fun3()">
+	<label for="radius"> border-bottom-right-radius: </label>
+	<input type="text" id="i3">
+  </section>	
+	  
+  <section>
+	<input type="range" id="radius-4" min="0" max="50" step="1" value="0" oninput="fun4()">
+	<label for="radius"> border-bottom-left-radius: </label>
+	<input type="text" id="i4">
+  </section>	
+	
+</body>
+</html>
